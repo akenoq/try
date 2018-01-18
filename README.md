@@ -1,4 +1,4 @@
-g# try TravisCI + Heroku
+# try TravisCI + Heroku
 
 1. Устанавливаем консоли Travis и Heroku
 2. Заходим на сайт Travis под своим акаунтом на Github (подробнее https://docs.travis-ci.com/user/getting-started/)
@@ -16,7 +16,7 @@ heroku login
 ```
 travis encrypt $(heroku auth:token) --add deploy.api_key
 ```
-6. В файле `.travis.yml` появился нужный ключ
+В файле `.travis.yml` появился нужный ключ
 ```
 deploy:
   provider: heroku
@@ -27,10 +27,10 @@ deploy:
     master:
       secure: ...MASTER-OWNER ENCRYPTED KEY...
 ```
-7. Осталось указать репозиторий, с которым должен работать Travis.
+6. Осталось указать репозиторий, с которым должен работать Travis.
 
 Travis начинает сборку как только происходит `git push` на отслеживаемой ветке в отслеживаемом репозитории.
 
 Для того, чтобы включить репозиторий в отслеживаемые, необходимо выбрать его из списка своих репозиториев https://travis-ci.org/profile/YOUR_TRAVIS_NAME и поставить переключатель в положение "Activate"
 
-8. Теперь все успешные сборки Travis'ом приложения должны автоматически деплоиться на Heroku.
+7. Теперь все успешные сборки Travis'ом приложения должны автоматически деплоиться на Heroku.
